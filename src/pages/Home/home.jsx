@@ -92,16 +92,16 @@ function Home() {
                   kebutuhanmu untuk sewa mobil selama 24 jam.
                 </p>
               </div>
-              <div className="flex-1 z-10">
+              <div className="flex-1 z-10 ">
                 <img src={HeroImg} alt="hero" />
               </div>
             </div>
-            <div className="absolute w-[474px] lg:w-[410px] xl:w-[774px] h-[243px] bottom-0 right-0 rounded-tl-[60px] bg-primaryDarkBlue-400"></div>
+            <div className="absolute w-[474px] sm:w-[624px] md:w-[724px] lg:w-[410px] xl:w-[704px] h-[243px] bottom-0 right-0 rounded-tl-[60px] bg-primaryDarkBlue-400"></div>
           </div>
-          <div className="absolute xl:w-[504px] w-[104px] lg:w-[374px] h-[243px] bottom-0 right-0 bg-primaryDarkBlue-400"></div>
+          <div className="absolute xl:w-[504px] w-[104px] lg:w-[274px] md:w-[324px] h-[243px] bottom-0 right-0 bg-primaryDarkBlue-400"></div>
         </div>
         <div className="w-full flex justify-center mx-auto relative lg:absolute lg:-bottom-10">
-          <div className="flex w-full m-2 flex-col lg:flex-row bg-white max-w-screen-lg space-x-3 p-4 rounded-md shadow-lg z-10">
+          <div className="flex w-full m-2 flex-col lg:flex-row bg-white max-w-screen-lg space-y-3 lg:space-x-3 p-4 rounded-md shadow-lg z-10">
             <div className="flex-1">
               <label>Tipe Driver</label>
               <Select variant="outline" placeholder="Pilih Tipe Driver">
@@ -130,7 +130,7 @@ function Home() {
               </InputGroup>
             </div>
             <div className="flex items-end">
-              <button className="bg-primaryLimeGreen-400 text-white px-2 py-2 rounded-sm">
+              <button className="bg-primaryLimeGreen-400 text-white px-2 py-2 w-full rounded-sm">
                 Cari Mobil
               </button>
             </div>
@@ -138,7 +138,7 @@ function Home() {
         </div>
       </section>
       <footer>
-        <div className="flex flex-col lg:flex-row container px-10 justify-between mt-32 mb-10">
+        <div className="flex flex-col lg:flex-row container mx-auto px-10 gap-3 justify-between mt-32 mb-10">
           <div className="text-center lg:text-left space-y-5">
             <p>
               Jalan Suroyo No. 161 Mayangan <br /> Kota Probolonggo 672000
@@ -188,9 +188,9 @@ function Home() {
               </a>
             </div>
           </div>
-          <div className="text-center justify-center">
-            <h6 className="mb-2">Copyright Binar 2022</h6>
-            <div className="flex justify-center w-[100px] h-[34px] bg-primaryDarkBlue-400"></div>
+          <div className="flex flex-col text-center justify-center gap-2">
+            <h6>Copyright Binar 2022</h6>
+            <div className="lg:w-[100px] h-[34px] bg-primaryDarkBlue-400"></div>
           </div>
         </div>
       </footer>
