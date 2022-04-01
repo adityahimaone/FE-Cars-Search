@@ -7,13 +7,13 @@ import {
   ClockIcon,
 } from "@heroicons/react/outline";
 import HeroImg from "../../assets/images/hero.png";
-import {
-  Select,
-  Button,
-  Input,
-  InputGroup,
-  InputRightElement,
-} from "@chakra-ui/react";
+import EmailIcon from "../../assets/images/icon_email.svg";
+import FBIcon from "../../assets/images/icon_fb.svg";
+import TwitterIcon from "../../assets/images/icon_twitter.svg";
+import InstagramIcon from "../../assets/images/icon_ig.svg";
+import TwitchIcon from "../../assets/images/icon_twitch.svg";
+
+import { Select, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 
 function Home() {
   const [offcanvas, setOffcanvas] = useState(false);
@@ -27,7 +27,9 @@ function Home() {
             </div>
             <div
               className={
-                offcanvas && "absolute inset-0 bg-black/80 transition-all z-20"
+                offcanvas
+                  ? "absolute inset-0 bg-black/80 transition-all z-20"
+                  : ""
               }
             ></div>
             <div
@@ -98,8 +100,8 @@ function Home() {
           </div>
           <div className="absolute xl:w-[504px] w-[104px] lg:w-[374px] h-[243px] bottom-0 right-0 bg-primaryDarkBlue-400"></div>
         </div>
-        <div className="w-full mx-auto absolute -bottom-10 ">
-          <div className="flex mx-auto bg-white max-w-screen-lg space-x-3 p-4 rounded-md shadow-lg z-10">
+        <div className="w-full flex justify-center mx-auto relative lg:absolute lg:-bottom-10">
+          <div className="flex w-full m-2 flex-col lg:flex-row bg-white max-w-screen-lg space-x-3 p-4 rounded-md shadow-lg z-10">
             <div className="flex-1">
               <label>Tipe Driver</label>
               <Select variant="outline" placeholder="Pilih Tipe Driver">
@@ -135,6 +137,63 @@ function Home() {
           </div>
         </div>
       </section>
+      <footer>
+        <div className="flex flex-col lg:flex-row container px-10 justify-between mt-32 mb-10">
+          <div className="text-center lg:text-left space-y-5">
+            <p>
+              Jalan Suroyo No. 161 Mayangan <br /> Kota Probolonggo 672000
+            </p>
+            <p>binarcarrental@gmail.com</p>
+            <p>081-233-334-808</p>
+          </div>
+          <div className="flex justify-center flex-row lg:flex-col gap-3 font-semibold">
+            <a href="#our-service">Our Service</a>
+            <a href="#whyus">Why Us</a>
+            <a href="#testimonial">Testimonial</a>
+            <a href="#faq">FAQ</a>
+          </div>
+          <div>
+            <h6 className="text-center lg:text-left mb-2">Connect With us</h6>
+            <div className="flex justify-center gap-2">
+              <a href="https://www.facebook.com/">
+                <img src={FBIcon} alt="icon-fb" className="footer-sosmed" />
+              </a>
+              <a href="https://www.instagram.com/">
+                <img
+                  src={InstagramIcon}
+                  alt="icon-ig"
+                  className="footer-sosmed"
+                />
+              </a>
+              <a href="https://www.twitter.com/">
+                <img
+                  src={TwitterIcon}
+                  alt="icon-twitter"
+                  className="footer-sosmed"
+                />
+              </a>
+              <a href="https://www.email.com/">
+                <img
+                  src={EmailIcon}
+                  alt="icon-email"
+                  className="footer-sosmed"
+                />
+              </a>
+              <a href="https://www.twitch.com/">
+                <img
+                  src={TwitchIcon}
+                  alt="icon-twitch"
+                  className="footer-sosmed"
+                />
+              </a>
+            </div>
+          </div>
+          <div className="text-center justify-center">
+            <h6 className="mb-2">Copyright Binar 2022</h6>
+            <div className="flex justify-center w-[100px] h-[34px] bg-primaryDarkBlue-400"></div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
