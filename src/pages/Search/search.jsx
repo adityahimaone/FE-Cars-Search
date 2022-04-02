@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { UsersIcon, ClockIcon } from "@heroicons/react/outline";
 import {
-  UsersIcon,
-  ClockIcon,
-  CalendarIcon,
-  CogIcon,
-} from "@heroicons/react/outline";
-import { Select, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
-import CarImage from "../../assets/images/car.png";
+  Select,
+  Input,
+  InputGroup,
+  InputRightElement,
+  Spinner,
+} from "@chakra-ui/react";
+import GetCars from "hooks/Cars/GetCars";
+import CardCars from "../../components/Card/CardCars";
 
-function search() {
+function Search() {
+  const { response, getCars, isLoading, error } = GetCars();
+
+  useEffect(() => {
+    getCars();
+  }, []);
+
+  console.log(response, "response");
   return (
     <div>
       <div className="relative h-[266px] bg-bluewhite">
@@ -54,41 +63,36 @@ function search() {
           </div>
         </div>
       </div>
-      <div className="mx-auto max-w-screen-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-32 lg:mt-14 p-2">
-        <div className="border bg-white rounded-md shadow-md p-4">
-          <div className="my-4">
-            <img src={CarImage} alt="car" className="w-full" />
+      <div className="mx-auto max-w-screen-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 mt-32 lg:mt-14 p-2">
+        {isLoading ? (
+          <div className="flex justify-center items-center h-52 col-span-3">
+            <Spinner
+              thickness="4px"
+              speed="0.65s"
+              emptyColor="gray.200"
+              color="blue.500"
+              size="xl"
+            />
           </div>
-          <div className="space-y-1 my-2">
-            <h3>Nama/Tipe Mobile</h3>
-            <h2 className="text-xl lg:text-lg font-semibold">
-              Rp 430.000/hari
-            </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-            </p>
+        ) : error ? (
+          <div className="flex justify-center items-center h-52 col-span-3">
+            <p>{error}</p>
           </div>
-          <div className="flex flex-col space-y-3 mb-2">
-            <p className="flex items-center">
-              <UsersIcon className="w-5 h-5 mr-2" />4 Orang
-            </p>
-            <p className="flex items-center">
-              <CogIcon className="w-5 h-5 mr-2" />
-              Manual
-            </p>
-            <p className="flex items-center">
-              <CalendarIcon className="w-5 h-5 mr-2" />
-              Tahun 2020
-            </p>
-          </div>
-          <button className=" bg-primaryLimeGreen-400 text-white p-2 rounded-sm w-full">
-            Pilih Mobil
-          </button>
-        </div>
+        ) : (
+          response?.map((item) => {
+            return (
+              <CardCars
+                id={item?.id}
+                name={item?.name}
+                image={item?.image}
+                price={item?.price}
+              />
+            );
+          })
+        )}
       </div>
     </div>
   );
 }
 
-export default search;
+export default Search;

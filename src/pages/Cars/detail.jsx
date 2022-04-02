@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Select, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 import {
   UsersIcon,
@@ -12,10 +12,20 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
+  Spinner,
 } from "@chakra-ui/react";
-import CarImage from "../../assets/images/car.png";
+import { useParams } from "react-router-dom";
+import GetCarByID from "hooks/Cars/GetCarByID";
+import { convertToIDR } from "utils/helper";
 
-function detail() {
+function Detail() {
+  let { id } = useParams("id", null);
+  const { response, getCarByID, isLoading, error } = GetCarByID(id);
+
+  useEffect(() => {
+    getCarByID(id);
+  }, []);
+
   return (
     <>
       <div className="relative h-[266px] bg-bluewhite">
@@ -115,13 +125,25 @@ function detail() {
             </div>
           </div>
           <div className="w-full lg:w-4/12 rounded-sm h-fit shadow-lg p-4">
-            <div className="my-4">
-              <img src={CarImage} alt="car" className="w-full" />
+            <div className="my-4 h-56">
+              {isLoading ? (
+                <div className="flex justify-center items-center h-full">
+                  <Spinner
+                    thickness="4px"
+                    speed="0.65s"
+                    emptyColor="gray.200"
+                    color="blue.500"
+                    size="xl"
+                  />
+                </div>
+              ) : (
+                <img src={response?.image} alt="car" className="w-full" />
+              )}
             </div>
             <div>
-              <h2>Nama/Tipe Mobil</h2>
+              <h2 className="text-lg font-semibold">{response?.name}</h2>
             </div>
-            <div className="flex flex-row space-x-2 mb-2 my-8">
+            <div className="flex flex-row space-x-2 mb-2 my-4">
               <p className="flex items-center">
                 <UsersIcon className="w-5 h-5 mr-2" />4 Orang
               </p>
@@ -136,7 +158,7 @@ function detail() {
             </div>
             <div className="flex justify-between mb-4">
               <h4>Total</h4>
-              <h4>Rp 430.00000</h4>
+              <h4>{convertToIDR(response?.price)}</h4>
             </div>
             <button className=" bg-primaryLimeGreen-400 text-white p-2 rounded-sm w-full">
               Lanjutkan Pembayaran
@@ -148,4 +170,4 @@ function detail() {
   );
 }
 
-export default detail;
+export default Detail;
