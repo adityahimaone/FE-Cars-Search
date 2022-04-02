@@ -19,7 +19,7 @@ export default function Navbar() {
             }
           ></div>
           <div
-            className={`w-[250px] lg:w-full bg-gradient-to-b from-white to-bluewhite lg:bg-none fixed lg:static lg:h-auto lg:p-0 top-0 z-50 h-full p-10 transition-all ${
+            className={`w-[250px] lg:w-full bg-gradient-to-b from-white to-bluewhite lg:bg-none fixed lg:static lg:h-auto lg:p-0 top-0 z-50 h-screen p-10 transition-all ${
               offcanvas ? "right-0" : "-right-full "
             }`}
           >
