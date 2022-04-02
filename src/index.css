@@ -14,4 +14,12 @@ code {
 
 .btnSecondaryGreen {
   @apply bg-primaryLimeGreen-400 text-white p-2 rounded-sm w-full hover:bg-green-700 hover:ring-2 hover:ring-offset-1 hover:ring-green-800;
+}
+
+.linkHover:hover span:last-child {
+  width: 100%;
+}
+
+.linkHoverAttr {
+  @apply absolute -bottom-1 left-0 w-0 transition-all h-1 bg-primaryLimeGreen-400;
 }/*# sourceMappingURL=index.css.map */

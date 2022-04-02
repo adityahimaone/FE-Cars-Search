@@ -1,7 +1,5 @@
 import React from "react";
-import { UsersIcon, ClockIcon } from "@heroicons/react/outline";
 import HeroImg from "../../assets/images/hero.png";
-import { Select, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 import SearchBar from "../../components/Search/SearchBar";
 
 function Home() {

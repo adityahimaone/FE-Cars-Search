@@ -6,7 +6,7 @@ export default function GetCarByID() {
   const [error, setError] = useState("");
   const [isLoading, setisLoading] = useState(true);
 
-  const getCarByID = (id) => {
+  const getCarByID = async (id) => {
     AxiosCustom.get(`/admin/car/${id}`)
       .then((res) => {
         setResponse(res.data);

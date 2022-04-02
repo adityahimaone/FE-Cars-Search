@@ -5,7 +5,10 @@ import { convertToIDR } from "utils/helper";
 
 export default function CardCars({ id, image, name, price }) {
   return (
-    <div key={id} className=" bg-white rounded-md shadow-md p-4">
+    <div
+      key={id}
+      className=" bg-white rounded-md shadow-md p-4 hover:scale-105"
+    >
       <div className="flex flex-wrap justify-center my-4 h-64 p-4 lg:h-[200px]">
         <img src={image} alt="car" className="w-full h-auto" />
       </div>

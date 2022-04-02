@@ -1,11 +1,5 @@
 import React, { useEffect } from "react";
-import { Select, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
-import {
-  UsersIcon,
-  ClockIcon,
-  CalendarIcon,
-  CogIcon,
-} from "@heroicons/react/outline";
+import { UsersIcon, CalendarIcon, CogIcon } from "@heroicons/react/outline";
 import {
   Accordion,
   AccordionItem,

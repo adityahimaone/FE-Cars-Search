@@ -35,16 +35,28 @@ export default function Navbar() {
             </div>
             <ul className="flex lg:space-x-8 lg:justify-end lg:items-center flex-col lg:flex-row space-y-4 lg:space-y-0">
               <li>
-                <Link to="/#">Our Service</Link>
+                <Link to="/#" className="relative w-fit px-1 linkHover">
+                  <span>Our Sevice</span>
+                  <span class="linkHoverAttr"></span>
+                </Link>
               </li>
               <li>
-                <Link to="/#">Why Us</Link>
+                <Link to="/#" className="relative w-fit px-1 linkHover">
+                  <span>Why US</span>
+                  <span class="linkHoverAttr"></span>
+                </Link>
               </li>
               <li>
-                <Link to="/#">Testimonial</Link>
+                <Link to="/#" className="relative w-fit px-1 linkHover">
+                  <span>Testimonial</span>
+                  <span class="linkHoverAttr"></span>
+                </Link>
               </li>
               <li>
-                <Link to="/#">FAQ</Link>
+                <Link to="/#" className="relative w-fit px-1 linkHover">
+                  <span>FAQ</span>
+                  <span class="linkHoverAttr"></span>
+                </Link>
               </li>
               <li>
                 <Link to="/#" className=" btnSecondaryGreen">

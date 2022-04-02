@@ -6,7 +6,7 @@ function GetCars() {
   const [error, setError] = useState("");
   const [isLoading, setisLoading] = useState(true);
 
-  const getCars = () => {
+  const getCars = async () => {
     AxiosCustom.get("/admin/car")
       .then((res) => {
         console.log(res);
