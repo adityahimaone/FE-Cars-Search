@@ -34,7 +34,7 @@ export default function CardCars({ id, image, name, price }) {
       </div>
       <Link
         to={`/cars/${id}`}
-        className="flex justify-center bg-primaryLimeGreen-400 text-white p-2 rounded-sm w-full"
+        className="flex justify-center btnSecondaryGreen"
       >
         Pilih Mobil
       </Link>

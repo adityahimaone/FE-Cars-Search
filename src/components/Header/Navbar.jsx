@@ -47,10 +47,7 @@ export default function Navbar() {
                 <Link to="/#">FAQ</Link>
               </li>
               <li>
-                <Link
-                  to="/#"
-                  className=" bg-primaryLimeGreen-400 text-white px-2 py-2 rounded-sm"
-                >
+                <Link to="/#" className=" btnSecondaryGreen">
                   Register
                 </Link>
               </li>
