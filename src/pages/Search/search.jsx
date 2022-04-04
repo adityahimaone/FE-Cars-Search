@@ -15,7 +15,7 @@ function Search() {
     <div>
       <div className="hidden lg:block h-[230px] bg-bluewhite" />
       <SearchBar title={true} />
-      <div className="mx-auto max-w-screen-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 p-2">
+      <div className="mx-auto max-w-screen-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 py-4">
         {isLoading ? (
           <div className="flex justify-center items-center h-52 col-span-3">
             <Spinner
