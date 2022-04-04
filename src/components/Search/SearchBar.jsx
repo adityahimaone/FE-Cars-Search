@@ -4,7 +4,7 @@ import { Select, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 
 export default function SearchBar({ title = false }) {
   return (
-    <div className="w-full flex justify-center mx-auto relative lg:absolute lg:-bottom-14 xl:-bottom-10">
+    <div className="w-full flex justify-center mx-auto relative lg:-mt-10">
       <div className="flex w-full m-2 flex-col bg-white max-w-screen-xl p-4 rounded-md shadow-lg z-10">
         <div>{title && <h1 className="font-bold my-2">Pencarianmu</h1>}</div>
         <div className="flex flex-col lg:flex-row space-y-3 lg:space-y-0 lg:space-x-3">

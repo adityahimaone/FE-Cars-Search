@@ -23,10 +23,9 @@ function Detail() {
 
   return (
     <>
-      <div className="relative h-[266px] bg-bluewhite">
-        <SearchBar title={true} />
-      </div>
-      <div className="mx-auto max-w-screen-xl mt-40 lg:mt-14 p-2">
+      <div className="hidden lg:block h-[230px] bg-bluewhite" />
+      <SearchBar title={true} />
+      <div className="mx-auto max-w-screen-xl p-2">
         <div className="flex w-full flex-col-reverse md:flex-row lg:gap-8">
           <div className="w-full lg:w-8/12 rounded-sm shadow-lg p-4 space-y-4">
             <div>
@@ -80,7 +79,7 @@ function Detail() {
             </div>
           </div>
           <div className="w-full lg:w-4/12 rounded-sm h-fit shadow-lg p-4">
-            <div className="my-4 h-56">
+            <div className="my-4 h-56 flex justify-center items-center">
               {isLoading ? (
                 <div className="flex justify-center items-center h-full">
                   <Spinner
@@ -92,7 +91,7 @@ function Detail() {
                   />
                 </div>
               ) : (
-                <img src={response?.image} alt="car" className="w-full" />
+                <img src={response?.image} alt="car" className="max-w-sm" />
               )}
             </div>
             <div>
