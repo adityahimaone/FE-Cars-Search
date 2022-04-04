@@ -25,8 +25,8 @@ function Detail() {
     <>
       <div className="hidden lg:block h-[230px] bg-bluewhite" />
       <SearchBar title={true} />
-      <div className="mx-auto max-w-screen-xl py-4">
-        <div className="flex w-full flex-col-reverse md:flex-row lg:gap-8">
+      <div className="mx-auto max-w-screen-xl py-4 ">
+        <div className="flex w-full flex-col-reverse md:flex-row lg:gap-8 px-5">
           <div className="w-full lg:w-8/12 rounded-sm shadow-lg p-4 space-y-4">
             <div>
               <h2 className="text-lg font-semibold">Tentang Paket</h2>
@@ -91,7 +91,11 @@ function Detail() {
                   />
                 </div>
               ) : (
-                <img src={response?.image} alt="car" className="max-w-sm" />
+                <img
+                  src={response?.image}
+                  alt="car"
+                  className="max-w-sm overflow-hidden"
+                />
               )}
             </div>
             <div>

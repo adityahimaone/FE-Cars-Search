@@ -9,7 +9,7 @@ export default function Default() {
   return (
     <div>
       <Navbar />
-      <main>
+      <main className="overflow-hidden">
         <Outlet />
       </main>
       <Footer />

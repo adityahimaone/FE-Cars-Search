@@ -7,8 +7,8 @@ import TwitchIcon from "../../assets/images/icon_twitch.svg";
 
 export default function Footer() {
   return (
-    <footer>
-      <div className="flex flex-col lg:flex-row container mx-auto px-10 gap-3 justify-between mt-32 mb-10">
+    <footer className="bg-gradient-to-t from-bluewhite to-transparent">
+      <div className="flex flex-col lg:flex-row container mx-auto px-10 gap-3 justify-between mt-32 py-10">
         <div className="text-center lg:text-left space-y-5">
           <p>
             Jalan Suroyo No. 161 Mayangan <br /> Kota Probolonggo 672000

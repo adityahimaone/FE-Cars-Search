@@ -10,10 +10,10 @@ function Home() {
           <div className="container mx-auto px-10 py-8 relative">
             <div className="flex flex-col lg:flex-row items-center">
               <div className="flex-1 space-y-6 z-10">
-                <h1 className="text-4xl font-bold lg:w-[568px]">
+                <h1 className="text-2xl md:text-4xl font-bold lg:w-[568px] leading-relaxed">
                   Sewa & Rental Mobil Terbaik di kawasan (Lokasimu)
                 </h1>
-                <p className=" lg:w-[500px]">
+                <p className="text-md md:text-lg lg:w-[500px]">
                   Selamat datang di Binar Car Rental. Kami menyediakan mobil
                   kualitas terbaik dengan harga terjangkau. Selalu siap melayani
                   kebutuhanmu untuk sewa mobil selama 24 jam.
