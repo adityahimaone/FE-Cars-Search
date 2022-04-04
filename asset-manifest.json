@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/FE-Cars-Search/static/css/main.514abef2.css",
+    "main.js": "/FE-Cars-Search/static/js/main.8f4a5f59.js",
+    "static/js/787.71142640.chunk.js": "/FE-Cars-Search/static/js/787.71142640.chunk.js",
+    "static/media/hero.png": "/FE-Cars-Search/static/media/hero.96e9ec19d7d891883184.png",
+    "static/media/icon_ig.svg": "/FE-Cars-Search/static/media/icon_ig.dd2143ff90ec432ad0509bb125741ba4.svg",
+    "static/media/icon_twitter.svg": "/FE-Cars-Search/static/media/icon_twitter.2277299d8c12be8a24add3b8990ff121.svg",
+    "index.html": "/FE-Cars-Search/index.html",
+    "static/media/icon_email.svg": "/FE-Cars-Search/static/media/icon_email.5f1ea884bd20127cd573cd2184450cb6.svg",
+    "static/media/icon_fb.svg": "/FE-Cars-Search/static/media/icon_fb.abcda49ac0393090ba419068089058b8.svg",
+    "static/media/icon_twitch.svg": "/FE-Cars-Search/static/media/icon_twitch.e19e49aa90a0baeff7aeaa4ed93c1a35.svg",
+    "main.514abef2.css.map": "/FE-Cars-Search/static/css/main.514abef2.css.map",
+    "main.8f4a5f59.js.map": "/FE-Cars-Search/static/js/main.8f4a5f59.js.map",
+    "787.71142640.chunk.js.map": "/FE-Cars-Search/static/js/787.71142640.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.514abef2.css",
+    "static/js/main.8f4a5f59.js"
+  ]
+}
