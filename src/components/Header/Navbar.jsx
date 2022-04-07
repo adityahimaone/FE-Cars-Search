@@ -37,25 +37,25 @@ export default function Navbar() {
               <li>
                 <Link to="/#" className="relative w-fit px-1 linkHover">
                   <span>Our Sevice</span>
-                  <span class="linkHoverAttr"></span>
+                  <span className="linkHoverAttr"></span>
                 </Link>
               </li>
               <li>
                 <Link to="/#" className="relative w-fit px-1 linkHover">
                   <span>Why US</span>
-                  <span class="linkHoverAttr"></span>
+                  <span className="linkHoverAttr"></span>
                 </Link>
               </li>
               <li>
                 <Link to="/#" className="relative w-fit px-1 linkHover">
                   <span>Testimonial</span>
-                  <span class="linkHoverAttr"></span>
+                  <span className="linkHoverAttr"></span>
                 </Link>
               </li>
               <li>
                 <Link to="/#" className="relative w-fit px-1 linkHover">
                   <span>FAQ</span>
-                  <span class="linkHoverAttr"></span>
+                  <span className="linkHoverAttr"></span>
                 </Link>
               </li>
               <li>

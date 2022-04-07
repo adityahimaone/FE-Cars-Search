@@ -9,7 +9,6 @@ function GetCars() {
   const getCars = async () => {
     AxiosCustom.get("/admin/car")
       .then((res) => {
-        console.log(res);
         setResponse(res.data);
         setisLoading(false);
       })

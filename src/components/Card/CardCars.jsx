@@ -9,8 +9,8 @@ export default function CardCars({ id, image, name, price }) {
       key={id}
       className=" bg-white rounded-md shadow-md p-4 hover:scale-105"
     >
-      <div className="flex flex-wrap justify-center my-4 h-64 p-4 lg:h-[200px]">
-        <img src={image} alt="car" className="w-full h-auto" />
+      <div className="flex flex-wrap justify-center my-4 p-4">
+        <img src={image} alt="car" className="overflow-hidden w-full h-auto" />
       </div>
       <div className="space-y-1 mt-11">
         <h3>{name}</h3>

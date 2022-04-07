@@ -9,16 +9,23 @@ export default function SearchBar({ title = false }) {
     navigate("/search");
   };
 
+  const typeDriver = ["Dengan Sopir", "Tanpa Sopir"];
+
+  const pickupTime = ["08.00", "09.00", "10.00", "11.00", "12.00"];
+
   return (
-    <div className="w-full flex justify-center mx-auto relative lg:-mt-10 px-3">
+    <div className="w-full flex justify-center mx-auto relative lg:-mt-14 px-3">
       <div className="flex w-full m-2 flex-col bg-white max-w-screen-xl p-4 rounded-md shadow-lg z-10">
         <div>{title && <h1 className="font-bold my-2">Pencarianmu</h1>}</div>
         <div className="flex flex-col lg:flex-row space-y-3 lg:space-y-0 lg:space-x-3">
           <div className="flex-1">
             <label>Tipe Driver</label>
             <Select variant="outline" placeholder="Pilih Tipe Driver">
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
+              {typeDriver.map((item, index) => (
+                <option key={index + 1} value={item}>
+                  {item}
+                </option>
+              ))}
             </Select>
           </div>
           <div className="flex-1">
@@ -28,8 +35,11 @@ export default function SearchBar({ title = false }) {
           <div className="flex-1">
             <label>Waktu Jemput</label>
             <Select icon={<ClockIcon />} placeholder="Pilih Waktu">
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
+              {pickupTime.map((item, index) => (
+                <option key={index + 1} value={item}>
+                  {item}
+                </option>
+              ))}
             </Select>
           </div>
           <div className="flex-1">

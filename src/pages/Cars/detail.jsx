@@ -12,6 +12,7 @@ import { useParams } from "react-router-dom";
 import GetCarByID from "hooks/Cars/GetCarByID";
 import { convertToIDR } from "utils/helper";
 import SearchBar from "../../components/Search/SearchBar";
+import { include, exclude, refund } from "../../data/DetailCars";
 
 function Detail() {
   let { id } = useParams("id", null);
@@ -26,7 +27,7 @@ function Detail() {
       <div className="hidden lg:block h-[230px] bg-bluewhite" />
       <SearchBar title={true} />
       <div className="mx-auto max-w-screen-xl py-4 ">
-        <div className="flex w-full flex-col-reverse md:flex-row lg:gap-8 px-5">
+        <div className="flex w-full flex-col-reverse md:flex-row lg:gap-8 px-5 xl:px-0">
           <div className="w-full lg:w-8/12 rounded-sm shadow-lg p-4 space-y-4">
             <div>
               <h2 className="text-lg font-semibold">Tentang Paket</h2>
@@ -34,19 +35,17 @@ function Detail() {
             <div>
               <h3>Include</h3>
               <ul className="list-disc mx-5">
-                <li>Apa saja ..... </li>
-                <li>Apa saja ..... </li>
-                <li>Apa saja ..... </li>
-                <li>Apa saja ..... </li>
+                {include.map((item, index) => {
+                  return <li key={index}>{item}</li>;
+                })}
               </ul>
             </div>
             <div>
               <h3>Exclude</h3>
               <ul className="list-disc mx-5">
-                <li>Apa saja ..... </li>
-                <li>Apa saja ..... </li>
-                <li>Apa saja ..... </li>
-                <li>Apa saja ..... </li>
+                {exclude.map((item, index) => {
+                  return <li key={index}>{item}</li>;
+                })}
               </ul>
             </div>
             <div>
@@ -64,14 +63,9 @@ function Detail() {
                   </h2>
                   <AccordionPanel px={0} pb={4}>
                     <ul className="list-disc mx-5">
-                      <li>Test....</li>
-                      <li>Test....</li>
-                      <li>Test....</li>
-                      <li>Test....</li>
-                      <li>Test....</li>
-                      <li>Test....</li>
-                      <li>Test....</li>
-                      <li>Test....</li>
+                      {refund.map((item, index) => {
+                        return <li key={index}>{item}</li>;
+                      })}
                     </ul>
                   </AccordionPanel>
                 </AccordionItem>
@@ -94,14 +88,14 @@ function Detail() {
                 <img
                   src={response?.image}
                   alt="car"
-                  className="max-w-sm overflow-hidden"
+                  className="max-w-sm overflow-hidden w-full h-auto"
                 />
               )}
             </div>
             <div>
               <h2 className="text-lg font-semibold">{response?.name}</h2>
             </div>
-            <div className="flex flex-row space-x-2 mb-2 my-4">
+            <div className="flex flex-col md:flex-row md:space-x-2 mb-2 my-4">
               <p className="flex items-center">
                 <UsersIcon className="w-5 h-5 mr-2" />4 Orang
               </p>
@@ -116,11 +110,16 @@ function Detail() {
             </div>
             <div className="flex justify-between mb-4">
               <h4>Total</h4>
-              <h4>{convertToIDR(response?.price)}</h4>
+              <h4 className="font-bold">{convertToIDR(response?.price)}</h4>
             </div>
             <button className="btnSecondaryGreen">Lanjutkan Pembayaran</button>
           </div>
         </div>
+      </div>
+      <div className="flex justify-center py-8">
+        <button className="btnSecondaryGreenNotFull">
+          Lanjutkan Pembayaran
+        </button>
       </div>
     </>
   );
