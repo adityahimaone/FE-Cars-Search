@@ -11,6 +11,11 @@ export const exclude = [
   "Tidak termasuk akomodasi penginapan",
 ];
 
+export const excludeWithoutDriver = [
+  "Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam",
+  "Tidak termasuk akomodasi penginapan",
+];
+
 export const refund = [
   "Tidak termasuk biaya makan sopir Rp 75.000/hari",
   "Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam",
@@ -19,6 +24,15 @@ export const refund = [
   "Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam",
   "Tidak termasuk akomodasi penginapan",
   "Tidak termasuk biaya makan sopir Rp 75.000/hari",
+  "Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam",
+  "Tidak termasuk akomodasi penginapan",
+];
+
+export const refundWithoutDriver = [
+  "Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam",
+  "Tidak termasuk akomodasi penginapan",
+  "Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam",
+  "Tidak termasuk akomodasi penginapan",
   "Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam",
   "Tidak termasuk akomodasi penginapan",
 ];

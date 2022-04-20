@@ -6,12 +6,13 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { getCars } from "../../redux/action/carsAction";
 import { saveSearch } from "redux/action/searchAction";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 export default function SearchBar({ title = false }) {
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  let { id } = useParams("id", null);
 
   const onSubmit = (values) => {
     if (location?.pathname === "/") {
@@ -50,6 +51,7 @@ export default function SearchBar({ title = false }) {
               variant="outline"
               placeholder="Pilih Tipe Driver"
               name="typedriver"
+              isDisabled={location?.pathname === `/cars/${id}`}
               {...register("typedriver")}
             >
               {typeDriver.map((item, index) => (
@@ -65,6 +67,7 @@ export default function SearchBar({ title = false }) {
               type="date"
               id="birthday"
               name="date"
+              isDisabled={location?.pathname === `/cars/${id}`}
               {...register("date")}
             />
           </div>
@@ -74,6 +77,7 @@ export default function SearchBar({ title = false }) {
               icon={<ClockIcon />}
               placeholder="Pilih Waktu"
               {...register("pickup")}
+              isDisabled={location?.pathname === `/cars/${id}`}
             >
               {pickupTime.map((item, index) => (
                 <option key={index + 1} value={item}>
@@ -89,6 +93,7 @@ export default function SearchBar({ title = false }) {
                 placeholder="Jumlah Penumpang"
                 name="passenger"
                 {...register("passenger")}
+                isDisabled={location?.pathname === `/cars/${id}`}
               />
               <InputRightElement children={<UsersIcon className="h-5 w-5" />} />
             </InputGroup>
@@ -98,6 +103,8 @@ export default function SearchBar({ title = false }) {
               className="btnSecondaryGreen"
               isLoading={isSubmitting}
               type="submit"
+              dis
+              isDisabled={location?.pathname === `/cars/${id}`}
             >
               Cari Mobil
             </button>

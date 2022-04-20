@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { UsersIcon, CalendarIcon, CogIcon } from "@heroicons/react/outline";
 import {
   Accordion,
@@ -8,21 +8,20 @@ import {
   AccordionIcon,
   Spinner,
 } from "@chakra-ui/react";
-import { useParams } from "react-router-dom";
-import GetCarByID from "hooks/Cars/GetCarByID";
 import { convertToIDR } from "utils/helper";
 import SearchBar from "../../components/Search/SearchBar";
-import { include, exclude, refund } from "../../data/DetailCars";
+import {
+  include,
+  exclude,
+  refund,
+  excludeWithoutDriver,
+  refundWithoutDriver,
+} from "../../data/DetailCars";
 import { useSelector } from "react-redux";
 
 function Detail() {
-  let { id } = useParams("id", null);
-  // const { response, getCarByID, isLoading } = GetCarByID(id);
   const { isLoading, data: cars } = useSelector((state) => state.carsDetail);
-
-  // useEffect(() => {
-  //   getCarByID(id);
-  // }, []);
+  const { data: search } = useSelector((state) => state.search);
 
   return (
     <>
@@ -45,9 +44,13 @@ function Detail() {
             <div>
               <h3>Exclude</h3>
               <ul className="list-disc mx-5">
-                {exclude.map((item, index) => {
-                  return <li key={index}>{item}</li>;
-                })}
+                {search.typedriver === "Tanpa Sopir"
+                  ? excludeWithoutDriver.map((item, index) => {
+                      return <li key={index}>{item}</li>;
+                    })
+                  : exclude.map((item, index) => {
+                      return <li key={index}>{item}</li>;
+                    })}
               </ul>
             </div>
             <div>
@@ -65,9 +68,13 @@ function Detail() {
                   </h2>
                   <AccordionPanel px={0} pb={4}>
                     <ul className="list-disc mx-5">
-                      {refund.map((item, index) => {
-                        return <li key={index}>{item}</li>;
-                      })}
+                      {search.typedriver === "Tanpa Sopir"
+                        ? refundWithoutDriver.map((item, index) => {
+                            return <li key={index}>{item}</li>;
+                          })
+                        : refund.map((item, index) => {
+                            return <li key={index}>{item}</li>;
+                          })}
                     </ul>
                   </AccordionPanel>
                 </AccordionItem>

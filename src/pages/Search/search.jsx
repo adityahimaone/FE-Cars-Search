@@ -39,7 +39,7 @@ function Search() {
             .filter((car) => {
               return (
                 // return if date available
-                search.date != ""
+                search.date !== ""
                   ? car.start_rent_at <= search.date &&
                       car.finish_rent_at >= search.date
                   : cars
