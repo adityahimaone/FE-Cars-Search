@@ -3,12 +3,20 @@ import { Spinner } from "@chakra-ui/react";
 import GetCars from "hooks/Cars/GetCars";
 import CardCars from "../../components/Card/CardCars";
 import SearchBar from "../../components/Search/SearchBar";
+import { useDispatch, useSelector } from "react-redux";
+import { getCars } from "../../redux/action/carsAction";
 
 function Search() {
-  const { response, getCars, isLoading, error } = GetCars();
+  const dispatch = useDispatch();
+
+  const { isLoading, data: cars } = useSelector((state) => state.cars);
+  const { data: search } = useSelector((state) => state.search);
+
+  console.log(search, "search");
+  // const { response, getCars, isLoading, error } = GetCars();
 
   useEffect(() => {
-    getCars();
+    dispatch(getCars());
   }, []);
 
   return (
@@ -26,22 +34,39 @@ function Search() {
               size="xl"
             />
           </div>
-        ) : error ? (
-          <div className="flex justify-center items-center h-52 col-span-3">
-            <p>{error}</p>
-          </div>
         ) : (
-          response?.map((item) => {
-            return (
-              <CardCars
-                key={item.id}
-                id={item?.id}
-                name={item?.name}
-                image={item?.image}
-                price={item?.price}
-              />
-            );
-          })
+          cars
+            .filter((car) => {
+              return (
+                // return if date available
+                search.date != ""
+                  ? car.start_rent_at <= search.date &&
+                      car.finish_rent_at >= search.date
+                  : cars
+              );
+            })
+            .map((car) => {
+              return (
+                <CardCars
+                  key={car.id}
+                  id={car?.id}
+                  name={car?.name}
+                  image={car?.image}
+                  price={car?.price}
+                />
+              );
+            })
+          // cars?.map((item) => {
+          //   return (
+          //     <CardCars
+          //       key={item.id}
+          //       id={item?.id}
+          //       name={item?.name}
+          //       image={item?.image}
+          //       price={item?.price}
+          //     />
+          //   );
+          // })
         )}
       </div>
     </div>

@@ -13,14 +13,16 @@ import GetCarByID from "hooks/Cars/GetCarByID";
 import { convertToIDR } from "utils/helper";
 import SearchBar from "../../components/Search/SearchBar";
 import { include, exclude, refund } from "../../data/DetailCars";
+import { useSelector } from "react-redux";
 
 function Detail() {
   let { id } = useParams("id", null);
-  const { response, getCarByID, isLoading } = GetCarByID(id);
+  // const { response, getCarByID, isLoading } = GetCarByID(id);
+  const { isLoading, data: cars } = useSelector((state) => state.carsDetail);
 
-  useEffect(() => {
-    getCarByID(id);
-  }, []);
+  // useEffect(() => {
+  //   getCarByID(id);
+  // }, []);
 
   return (
     <>
@@ -86,31 +88,32 @@ function Detail() {
                 </div>
               ) : (
                 <img
-                  src={response?.image}
+                  src={cars?.image}
                   alt="car"
                   className="max-w-sm overflow-hidden w-full h-auto"
                 />
               )}
             </div>
             <div>
-              <h2 className="text-lg font-semibold">{response?.name}</h2>
+              <h2 className="text-lg font-semibold">{cars?.name}</h2>
             </div>
             <div className="flex flex-col md:flex-row md:space-x-2 mb-2 my-4">
               <p className="flex items-center">
-                <UsersIcon className="w-5 h-5 mr-2" />4 Orang
+                <UsersIcon className="w-5 h-5 mr-2" />
+                {cars?.descriptionCar?.passenger} Orang
               </p>
               <p className="flex items-center">
                 <CogIcon className="w-5 h-5 mr-2" />
-                Manual
+                {cars?.descriptionCar?.transmission}
               </p>
               <p className="flex items-center">
                 <CalendarIcon className="w-5 h-5 mr-2" />
-                Tahun 2020
+                Tahun {cars?.descriptionCar?.year}
               </p>
             </div>
             <div className="flex justify-between mb-4">
               <h4>Total</h4>
-              <h4 className="font-bold">{convertToIDR(response?.price)}</h4>
+              <h4 className="font-bold">{convertToIDR(cars?.price)}</h4>
             </div>
             <button className="btnSecondaryGreen">Lanjutkan Pembayaran</button>
           </div>

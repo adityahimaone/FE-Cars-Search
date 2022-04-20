@@ -1,8 +1,11 @@
 import React from "react";
 import HeroImg from "../../assets/images/hero.png";
 import SearchBar from "../../components/Search/SearchBar";
+import { useLocation } from "react-router-dom";
 
-function Home() {
+function Home(props) {
+  const location = useLocation();
+  console.log(location.pathname);
   return (
     <>
       <section className="relative">
@@ -27,7 +30,7 @@ function Home() {
           </div>
           <div className="absolute xl:w-[504px] w-[104px] lg:w-[274px] md:w-[324px] sm:h-[243px] h-[150px] bottom-0 right-0 bg-primaryDarkBlue-400"></div>
         </div>
-        <SearchBar />
+        <SearchBar location={location} />
       </section>
     </>
   );
