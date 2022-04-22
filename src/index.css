@@ -3,24 +3,23 @@
 @tailwind utilities;
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .btnSecondaryGreen {
   @apply bg-primaryLimeGreen-400 text-white p-2 rounded-sm w-full hover:bg-green-700 hover:ring-2 hover:ring-offset-1 hover:ring-green-800;
 }
-
 .btnSecondaryGreenNotFull {
   @apply bg-primaryLimeGreen-400 text-white p-2 rounded-sm hover:bg-green-700 hover:ring-2 hover:ring-offset-1 hover:ring-green-800;
+}
+.btnPrimaryBlue {
+  @apply text-primaryDarkBlue-400 border border-primaryDarkBlue-400 p-2 rounded-sm w-full hover:bg-primaryDarkBlue-400 hover:text-white hover:ring-2 hover:ring-offset-1 hover:ring-primaryDarkBlue-400;
 }
 
 .linkHover:hover span:last-child {
@@ -29,4 +28,4 @@ code {
 
 .linkHoverAttr {
   @apply absolute -bottom-1 left-0 w-0 transition-all h-1 bg-primaryLimeGreen-400;
-} /*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */

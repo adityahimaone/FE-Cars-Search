@@ -20,6 +20,13 @@ code {
   &SecondaryGreen {
     @apply bg-primaryLimeGreen-400 text-white p-2 rounded-sm w-full hover:bg-green-700 hover:ring-2 hover:ring-offset-1 hover:ring-green-800;
   }
+  &SecondaryGreenNotFull {
+    @apply bg-primaryLimeGreen-400 text-white p-2 rounded-sm hover:bg-green-700 hover:ring-2 hover:ring-offset-1 hover:ring-green-800;
+  }
+
+  &PrimaryBlue {
+    @apply text-primaryDarkBlue-400 border border-primaryDarkBlue-400 p-2 rounded-sm w-full hover:bg-primaryDarkBlue-400 hover:text-white hover:ring-2 hover:ring-offset-1 hover:ring-primaryDarkBlue-400;
+  }
 }
 
 .linkHover:hover span:last-child {

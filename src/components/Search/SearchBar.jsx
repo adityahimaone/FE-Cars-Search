@@ -3,7 +3,7 @@ import { UsersIcon, ClockIcon } from "@heroicons/react/outline";
 import { Select, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getCars } from "../../redux/action/carsAction";
 import { saveSearch } from "redux/action/searchAction";
 import { useLocation, useParams } from "react-router-dom";
@@ -16,6 +16,7 @@ export default function SearchBar({ title = false }) {
 
   const onSubmit = (values) => {
     if (location?.pathname === "/") {
+      dispatch(saveSearch(values));
       navigate(`/search`);
     } else {
       dispatch(saveSearch(values));
@@ -23,12 +24,11 @@ export default function SearchBar({ title = false }) {
     }
   };
 
-  console.log(location.pathname, "location");
   const {
     handleSubmit,
     register,
     watch,
-    formState: { errors, isSubmitting },
+    formState: { isSubmitting },
   } = useForm();
 
   console.log(watch());
@@ -99,15 +99,21 @@ export default function SearchBar({ title = false }) {
             </InputGroup>
           </div>
           <div className="flex items-end">
-            <button
-              className="btnSecondaryGreen"
-              isLoading={isSubmitting}
-              type="submit"
-              dis
-              isDisabled={location?.pathname === `/cars/${id}`}
-            >
-              Cari Mobil
-            </button>
+            {location?.pathname !== `/cars/${id}` && (
+              <button
+                className={`font-semibold ${
+                  location?.pathname === `/search`
+                    ? "btnPrimaryBlue"
+                    : "btnSecondaryGreen"
+                }`}
+                isLoading={isSubmitting}
+                type="submit"
+                dis
+                isDisabled={location?.pathname === `/cars/${id}`}
+              >
+                {location?.pathname === `/search` ? "Edit" : "Cari Mobil"}
+              </button>
+            )}
           </div>
         </div>
       </form>
